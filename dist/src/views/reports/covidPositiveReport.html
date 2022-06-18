@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid Positive Report</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lato';
+        }
+
+        table,
+        tr,
+        td {
+            /* border: 1px solid black;
+            border-collapse: collapse; */
+            border: none;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- page 1 -->
+    <div>
+        <!-- header        -->
+            <table>
+                <tr>
+                    <td style="width: 50%;vertical-align:middle">
+                        <img src="https://www.bloomsafely.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FScottsdaleLogo.efa4f0c6.jpeg&w=256&q=75"
+                            width="auto" height="50" />
+                    </td>
+                    <td align="right" style="width: 50%;">
+                        <p style="font-size: 12px;">Date: {{result_date}}</p>
+                    </td>
+                </tr>
+            </table>
+      
+        <div>
+            <!-- <div style="margin-top:10mm;"> -->
+            <table>
+                <tr>
+                    <td align='center'>
+                        <p style="font-size: 19px;">COVID-19 (SARS-CoV-2) {{test}} Test Report</p>
+                        <p style="font-size: 15px;margin:5px">Results for: {{patient_name}}</p>
+                        <p style="font-size: 15px;margin:5px">Test Performed: {{collected_date}}</p>
+                        <p style="font-size: 15px;margin:5px">Email: {{email}}</p>
+                    </td>
+                </tr>
+            </table>
+            <!-- </div> -->
+
+            <div style="margin:25px 20px">
+                <table>
+                    <tr>
+                        <td align="left" style="width: 40%;vertical-align: middle;font-size: 12px;">
+                            <table>
+                                <tr style="height:50px">
+                                    <td>
+                                        <p><span style="font-size: 24px;">&#9746;</span>Positive for COVID-19</p>
+                                    </td>
+                                </tr>
+                                <tr style="height:50px">
+                                    <td>
+                                        <p><span style="font-size: 24px;">&#9634;</span>Negative for COVID-19</p>
+                                    </td>
+                                </tr>
+                                <tr style="height:50px">
+                                    <td>
+                                        <p>Technician: {{technician_name}}</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td style="width: 60%;">
+                            <table>
+                                <tr>
+                                    <td align="right" style="width:25%">
+                                        <p style="font-size: 12px;">Signature: </p>
+                                    </td>
+                                    <td align="left" style="width:75%">
+                                        <!-- <img src="https://www.bloomsafely.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FScottsdaleLogo.efa4f0c6.jpeg&w=256&q=75"
+                                            width="100%" height="100%" /> -->
+                                        <!-- <img src="http://localhost:3005/logo.png"
+                                            width="auto" height="50" /> -->
+                                        <img src={{signature}}
+                                            width="auto" height="75px" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div style="border: none;margin:25px 20px">
+                <table>
+                    <tr>
+                        <p style="font-size: 12px;font-style: italic;">FDA Diagnostic Disclosures</p>
+                    </tr>
+                    <tr>
+                        <p style="line-height: 1.2;font-size: 11px;">{{positive_description}}. Testing is limited to Clinical Laboratory Improvement Amendments of 1988 (CLIA),
+                            42
+                            U.S.C. §263a certified laboratories with FDA Emergency Use Authorization (EUA) for
+                            performing
+                            SARS-CoV-2 testing. Positive results are indicative of the presence of SARS-CoV-2 RNA;
+                            clinical
+                            correlation with patient history and other diagnostic information is necessary to determine
+                            any
+                            current patient infection status.</p>
+                    </tr>
+                    <tr>
+                        <p style="line-height: 1.2;font-size: 11px;">Positive results do not rule out bacterial
+                            infection or
+                            co-infection with other viruses. Negative results do not preclude SARS-CoV-2 infection and
+                            should be combined with clinical observations, patient history, and epidemiological
+                            information.
+                            Please refer to FDA's FAQs on Diagnostic Testing for SARS-CoV-2 for additional information.
+                        </p>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- footer
+            <table style="width: 100%;border: none;font-size: 9.5px;">
+            <tr style="width: 100%;border: none">
+                <td style="width: 50%;border: none">
+                    <p style="margin:2px">Saguaro Bloom Diagnostics LLC</p>
+                    <p style="margin:2px">CLIA 03D2188271</p>
+                </td>
+                <td align="right" style="width: 50%;border: none">
+                    <p style="margin:2px">4165 N Craftsman Ct</p>
+                    <p style="margin:2px">Scottsdale, AZ 85251</p>
+                    <p style="margin:2px">856-502-0781</p>
+                </td>
+            </tr>
+        </table> -->
+
+
+
+    </div>
+
+    <div style="page-break-after:always;display:block"> </div>
+    <!-- page 2 -->
+    <div>
+        <!-- header        -->
+        
+            <table>
+                <tr>
+                    <td style="width: 50%;vertical-align:middle">
+                        <img src="https://www.bloomsafely.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FScottsdaleLogo.efa4f0c6.jpeg&w=256&q=75"
+                            width="auto" height="50" />
+                    </td>
+                    <td align="right" style="width: 50%;">
+                        <p style="font-size: 12px;">Date: {{result_date}}</p>
+                    </td>
+                </tr>
+            </table>
+            <div style="margin:5px 25px">
+                <table>
+                    <tr>
+                        <p style="font-size: 13px;">Authorization for Use & Disclosure of Protected Health Information
+                        </p>
+                    </tr>
+                    <tr>
+                        <p style="line-height: 1.2;font-size: 10px;">I consent and authorize that test results reported
+                            by Saguaro Bloom Diagnostics LLC (SBD) will be reported directly to me via telephone and/or
+                            electronic mail. I understand that it is my responsibility to consult my own medical
+                            professional for the interpretation, analysis, evaluation, and explanation of my test
+                            results. I understand that neither SBD nor its clinical authority will analyze, evaluate,
+                            critique, review, or otherwise interpret the results of said tests.</p>
+                    </tr>
+                    <tr>
+                        <p style="line-height: 1.2;font-size: 10px;">I agree that SBD, directors, staff, or its other
+                            agents or employees shall not be liable for any claims including, but not limited to, those
+                            arising out of or related to inaccurate, uninterpreted, misinterpreted, or unreceived
+                            results. I do hereby expressly forever release and discharge all claims, demands, injuries,
+                            damage, actions, or causes of action.
+                        </p>
+                    </tr>
+                    <tr>
+                        <p style="line-height: 1.2;font-size: 10px;">
+                            I understand and agree that the services provided by SBD and the test results will be
+                            maintained as confidential, protected health information.
+                            <span style="font-weight: bold;">This test and its results may become part of my medical
+                                record and that an insurance company may discover the results of this test by obtaining
+                                a copy of my medical record in accordance with the terms of my insurance policies. I
+                                understand that my test results will only be provided to other third parties upon my
+                                request.</span>
+                        </p>
+                    </tr>
+                    <tr>
+                        <p style="line-height: 1.2;font-size: 10px;">
+                            I understand that my COVID-19 test results must be reported to state and federal health
+                            agencies and SBD will report these results.<span style="font-weight: bold;">My identifying
+                                information will only be reported to the applicable local or state health authority as
+                                required.</span>
+                        </p>
+                    </tr>
+                    <tr>
+                        <p style="line-height: 1.2;font-size: 10px;">
+                            All of the above has been reviewed by me and I have had the opportunity to have any
+                            questions answered that I have regarding my rights to privacy.<span
+                                style="font-weight: bold;">I have read and agreed to all the above terms and
+                                statements.</span>
+                        </p>
+                    </tr>
+                    <tr>
+                        <p style="font-size: 12px;">
+                            Full Name: {{patient_name}}
+                        </p>
+                    </tr>
+                    <tr>
+                        <td align="left" style="width: 50%;">
+                            <p style="font-size: 12px;">
+                                Signature: Electronically Signed
+                            </p>
+                        </td>
+                        <td align="right" style="width: 50%;">
+                            <p style="font-size: 12px;">
+                                Date : {{result_date}}
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

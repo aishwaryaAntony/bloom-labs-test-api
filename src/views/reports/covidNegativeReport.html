@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Covid Negative Report</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lato';
+        }
+
+        table,
+        tr,
+        td {
+            /* border: 1px solid black; */
+            /* border-collapse: collapse; */
+            border: none;
+            width: 100%;
+        }
+
+        p {
+            margin: 0;
+            /*font-size: 1.5rem;*/
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div>
+        <!-- page 1 start -->
+        {{#if is_second_page}}
+        <div style="page-break-after: always;">
+        {{/if}}
+        
+        {{#unless is_second_page}}
+        <div style="page-break-after: avoid;">
+        {{/unless}}
+            <!-- top right corner -->
+            <div style="position:absolute;width:210px;height: auto;right:-5px;top:-5px">
+                <img src="{{top_corner}}" width="100%" height="100%" />
+            </div>
+
+
+            <!-- bottom left corner -->
+            <div style="position:absolute;width:80px;height: auto;bottom:221mm;left:0px">
+                <img src="{{bottom_corner}}" width="100%" height="100%" />
+            </div>
+
+            <div style="padding: 15px 50px 15px 50px;margin-bottom: 0;">
+                <table>
+                    <tr>
+                        <td align="left">
+                            <img src="{{logo}}" width="250mm" height="auto" />
+                        </td>
+                    </tr>
+                </table>
+
+                <table>
+                    <tr>
+                        <td align="left" style="width:70%;padding:10px 0px 10px 0px">
+                            <p style="font-size: 20px;font-weight: bold;">COVID-19
+                                (SARS-CoV-2) {{test}}
+                                Test Report</p>
+                        </td>
+                        <td style="width:30%;" />
+                    </tr>
+                </table>
+
+                <table style="width:60%;font-size: 0.85rem;padding:10px 0px 20px 0px">
+                    <tr>
+                        <td style="width:40%;">
+                            <p>Test Number</p>
+                        </td>
+                        <td style="width:60%;">
+                            <p>: {{test_number}}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:40%;">
+                            <p>Full Name</p>
+                        </td>
+                        <td style="width:60%;">
+                            <p>: {{patient_name}}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:40%;">
+                            <p>Date Of Birth</p>
+                        </td>
+                        <td style="width:60%;">
+                            <p>: {{date_of_birth}}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:40%;">
+                            <p>ID Number</p>
+                        </td>
+                        <td style="width:60%;">
+                            <p>: {{id_number}}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:40%;">
+                            <p>Collection Date</p>
+                        </td>
+                        <td style="width:60%;">
+                            <p>: {{collected_date}}</p>
+                        </td>
+                    </tr>
+                    <tr style="height: 5px;">
+                        <td style="width:40%;">
+                            <p>Result Date</p>
+                        </td>
+                        <td style="width:60%;">
+                            <p>: {{result_date}}</p>
+                        </td>
+                    </tr>
+                </table>
+
+                <table style="border:2px solid green;border-collapse:collapse;font-size: 0.85rem;">
+                    <tr align="center" style="height:30px">
+                        <td style="border:2px solid green;width:33%;font-weight:bold">
+                            <p>Test</p>
+                        </td>
+                        <td style="border:2px solid green;width:33%;font-weight:bold">
+                            <p>Test Type</p>
+                        </td>
+                        <td style="border:2px solid green;width:33%;font-weight:bold">
+                            <p>Result</p>
+                        </td>
+                    </tr>
+                    <tr align="center" style="height:30px">
+                        <td style="border:2px solid green;width:33%">
+                            <p>{{test_name}}</p>
+                        </td>
+                        <td style="border:2px solid green;width:33%">
+                            <p>{{test_type}}</p>
+                        </td>
+                        <td style="border:2px solid green;width:33%">
+                            <p>{{result_value}}</p>
+                        </td>
+                    </tr>
+                </table>
+
+                <table>
+                    <tr>
+                        <td style="padding:25px 0px 25px 0px;font-size: 0.85rem;">
+                            <p>{{negative_description}}
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p style="font-size: 0.85rem;">Respectfully</p>
+                        </td>
+                    </tr>
+                </table>
+
+                <table style="padding: 10px 0px 10px 0px;">
+                    <tr align="center" style="vertical-align: middle;">
+                        <td align="left" style="width:33%;height: 175px;">
+                            <img src={{signature}} width="120px">
+                            <div style="text-align: left;">
+                                <p style="font-size: 10px;">Jesse D Greer, MD</p>
+                                <p style="font-size: 10px;">AZ Med License: 54983</p>
+                                <p style="font-size: 10px;">Medical Director</p>
+                            </div>
+                        </td>
+                        <td style="width:33%;height: 175px;">
+                            <img src={{qr_code}} width="90px">
+                            <p style="font-size: 10px;">Verify Result</p>
+                        </td>
+                        <td style="width:33%;height: 175px;">
+                            <img src={{seal}} width="120px">
+                        </td>
+                    </tr>
+                </table>
+
+                <table style="font-size: 10px;padding: 20px 0px 20px 0px;">
+                    <tr align="center">                        
+                        <td>                           
+                            <div style="text-align: left;width:70%">
+                            <p style="font-size: 14px;font-weight: bold;text-decoration: underline;">{{tested_lab}}</p>
+
+                                <p>CLIA: {{clia}}</p>
+                                <p>Address: {{address}}</p>
+                                <p>Phone: 856-502-0781</p>
+                            </div>
+                        </td>                        
+                    </tr>
+                    <tr>
+                        <td align="right">
+                            <p style="font-weight: bold;">Original Document</p>
+                        </td>
+                    </tr>
+                </table>
+               
+            </div>
+
+        </div>
+        <!-- page 1 end -->
+
+        <!-- page 2  start -->
+        {{#if is_second_page}}
+        <div>
+            <!-- header -->
+            <table style="margin-top:-0.5mm;margin-left: 4mm;">
+                <tr style="height:100px">
+                    <td align="left" style="width: 60%;vertical-align:bottom;padding: 0px 15px;">
+                        <p style="font-size: 14px;font-weight: bold;">COVID-19 {{test}} Test Record Card</p>
+                        <p style="font-size: 0.85rem;">SMART® Health Card</p>
+                    </td>
+                    <td align="center"
+                        style="width: 40%;vertical-align:middle;background-color: #0E465E;border-bottom-left-radius: 25px;">
+                        <img src="{{logo_white}}" width="auto" height="45" />
+                    </td>
+                </tr>
+            </table>
+
+            <div style="padding: 30px;">
+                <table style="border:1px solid black;border-radius: 10px;padding: 10px 15px;">
+                    <tr>
+                        <td style="width:60%;vertical-align: top;">
+                            <table style="font-size: 0.85rem;">
+                                <tr>
+                                    <td style="vertical-align: top;">
+                                        <p style="font-weight: bold;">COVID-19 PCR Test Record Card</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border-bottom: 1px solid black;">
+                                        <table style="padding: 20px 0px;">
+                                            <tr>
+                                                <td style="width:50%;padding: 10px 0px;">
+                                                    <p>NAME</p>
+                                                </td>
+                                                <td style="width:50%;padding: 10px 0px;">
+                                                    <p>DATE OF BIRTH</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:50%;">
+                                                    <p style="font-weight: bold;">{{patient_name}}</p>
+                                                </td>
+                                                <td align="left" style="width:50%;">
+                                                    <p style="font-weight: bold;">{{date_of_birth}}</p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 20px 0px;">
+                                        <p style="font-weight: bold;">{{tested_machine_name}}</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td style="width:5%;"></td>
+                        <td style="width:20%;">
+                            <!-- for QR code -->
+                            <div style="width: 150px;height: 150px;">
+                                <img src="{{qr_code}}" width="100%" height="100%">
+                            </div>
+                            <table>
+                                <tr>
+                                    <td style="width:40%">
+                                        <p style="font-size: 8px;color: #666;">WORKS WITH</p>
+                                    </td>
+                                    <td style="width:60%">
+                                        <div style="width:auto;height:15px;">
+                                            <img width="100%" height="100%"
+                                                src="https://images.squarespace-cdn.com/content/v1/5f6a19111e0fc3540d49a84e/1602347782111-LZVO8DX8LS9ZK0XC19F0/CommonPass_Logo.png?format=1500w" />
+                                        </div>
+
+                                        <!-- <div
+                                            style="width:10px;height:10px;border-radius: 50%;border-style:solid;border-width: 2.5px;border-color:#171F95;border-right-color: #2762E5;">
+                                        </div>
+                                        <span style="color:#171F95;font-size: 6px;font-weight: bold;">Common</span>
+                                        <span style="color:#2762E5;font-size: 6px;font-weight: bold;">Pass</span> -->
+
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+
+            <div style="padding: 0px 35px;margin-top: -5mm;">
+                <p style="font-size: 0.85rem;font-weight: bold;">What is a SMART® Health Card?</p>
+                <p style="font-size: 0.85rem;"><span style="font-size: 24px;font-weight: bold;">&#x2714;</span>Holds
+                    important vaccination or lab report data</p>
+                <p style="font-size: 0.85rem;"><span style="font-size: 24px;font-weight: bold;">&#x2714;</span>Can be
+                    scanned to verify that the information has not been tampered with</p>
+                <p style="font-size: 0.85rem;"><span style="font-size: 24px;font-weight: bold;">!</span><span
+                        style="font-size: 0.85rem;font-weight: bold;">Don't forget: </span>scanning this QR Code will share
+                    all of the
+                    information on your PCR Test Record Card, so make sure to only share with those you trust</p>
+            </div>
+
+            <div style="padding: 0px 35px;margin-top: 5mm;">
+                <p style="font-size: 0.85rem;font-weight: bold;">How to use the SMART® Health Card</p>
+                <table style="border-collapse: collapse;
+                    border-radius: 5px;
+                    border-style: hidden; 
+                    box-shadow: 0 0 0 1px #666;margin:15px 0px">
+                    <tr>
+                        <td align="center" style="width: 50%;border:1px solid #666;">
+                            <table>
+                                <tr>
+                                    <td align="center" style="width:50%;">
+                                        <img width="80px" height="auto"
+                                            src="https://images.squarespace-cdn.com/content/v1/5f6a19111e0fc3540d49a84e/1602347782111-LZVO8DX8LS9ZK0XC19F0/CommonPass_Logo.png?format=1500w" />
+                                    </td>
+                                    <td style="width:50%;">
+                                        <p style="font-size: 8px;color: #666;">Available on Android and IOS</p>
+                                    </td>
+                                </tr>
+                            </table>
+                            <!-- <div style="display:flex;flex-direction: column;">
+                                <div style="width:100px;height:auto;">
+                                    <img width="100%" height="100%" src="https://images.squarespace-cdn.com/content/v1/5f6a19111e0fc3540d49a84e/1602347782111-LZVO8DX8LS9ZK0XC19F0/CommonPass_Logo.png?format=1500w"/>
+                                </div>
+                            <div>
+                                <p style="font-size: 10px;color: #666;">Available on Android and IOS</p>
+                            </div>
+                            </div> -->
+
+                            <!-- <span>
+                                <div
+                                    style="width:12px;height:12px;border-radius: 50%;border-style:solid;border-width: 3px;border-color:#171F95;border-right-color: #2762E5;">
+                                </div>
+                            </span>
+                            <span style="color:#171F95;font-size: 0.85rem;font-weight: bold;">Common</span>
+                            <span style="color:#2762E5;font-size: 0.85rem;font-weight: bold;">Pass</span> -->
+                        </td>
+                        <td style="width: 50%;border:1px solid #666;">
+                            <table>
+                                <tr>
+                                    <td align="center" style="width:50%;">
+                                        <img width="80px" height="auto"
+                                            src="https://images.squarespace-cdn.com/content/v1/5f9c27bd4ee0a44f8d718110/1604069613309-IEK0SQB4KXDVEKDDQLBD/CommonHealth_Logo.png?format=1500w" />
+                                    </td>
+                                    <td style="width:50%;">
+                                        <p style="font-size: 8px;color: #666;">Available on Android</p>
+                                    </td>
+                                </tr>
+                            </table>
+                            <!-- <div style="width:100px;height:auto;">
+                                <img width="100%" height="100%" src="https://images.squarespace-cdn.com/content/v1/5f9c27bd4ee0a44f8d718110/1604069613309-IEK0SQB4KXDVEKDDQLBD/CommonHealth_Logo.png?format=1500w"/>
+                            </div> -->
+                            <!-- <span>
+                                <div
+                                    style="width:12px;height:12px;border-radius: 50%;border-style:solid;border-width: 3px;border-color:#2356D6;border-right-color: #ED7625;">
+                                </div>
+                            </span>
+                            <span style="color:#2356D6;font-size: 0.85rem;font-weight: bold;">Common</span>
+                            <span style="color:#ED7625;font-size: 0.85rem;font-weight: bold;">Health</span> -->
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+
+            <div style="padding: 0px 15px;font-size: 10px;">
+                <ol>
+                    <li>Download the CommonPass app in Google Play or Apple Store</li>
+                    <li>Click "enter my code" and enter "HAWAII" and click "continue"</li>
+                    <li>After the onboard statements and consent processes, click "Create New Pass"</li>
+                    <li>Click "Travel" then "Travel to Hawaii (Test)" then "Continue"</li>
+                    <li>Click "QR Code" and scan.</li>
+                    <li>Press "Create pass" and a minted pass will be shown</li>
+                </ol>
+                <p style="margin-left:25px">If you have issues with that method, please download the QR code from the
+                    results page via the "Download PNG" link where you accessed your results and save it to your photos,
+                    Then, repeat steps 1-4 and then try the following:</p>
+
+                <ol start="5">
+                    <li>Click "Digital Health Certificate"</li>
+                    <li>Click "Photos" and select your QR code</li>
+                    <li>Press "Create pass" and a minted pass will be shown</li>
+
+                </ol>
+            </div>
+            <!-- footer -->
+            <div style="margin: 70px 40px 0px 40px;border-top: 1px solid #666">
+                <table style="width:50%">
+                    <tr style="height:50px">
+                        <td style="vertical-align:middle;width:50%">
+                            <img src="{{logo}}" width="auto" height="20px" />
+                        </td>
+                        <td style="vertical-align:middle;width:50%">
+                            <img src="https://images.squarespace-cdn.com/content/v1/6055264fa5940469575508a4/1617891600462-LY5SKLL1XUNP7PCDPRFO/CTN_Logo_Horizontal.png?format=1500w"
+                                width="auto" height="15px" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+        {{/if}}
+        <!-- page 2  end -->
+    </div>
+
+</body>
+
+</html>
